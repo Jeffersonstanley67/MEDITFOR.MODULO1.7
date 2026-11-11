@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://localhost:8080/wordpress/medit-control/#reportes -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="max-image-preview:large">
+<title>medit.control – Sistema de carga horaria</title>
+<link rel="alternate" type="application/rss+xml" title="Sistema de carga horaria » Feed" href="http://localhost:8080/wordpress/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sistema de carga horaria » Feed de los comentarios" href="http://localhost:8080/wordpress/comments/feed/">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="http://localhost:8080/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8080%2Fwordpress%2Fmedit-control%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="http://localhost:8080/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8080%2Fwordpress%2Fmedit-control%2F&amp;format=xml">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=http://localhost:8080/wordpress/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-navigation-link-inline-css">
+.wp-block-navigation .wp-block-navigation-item__label{overflow-wrap:break-word}.wp-block-navigation .wp-block-navigation-item__description{display:none}.link-ui-tools{outline:1px solid #f0f0f0;padding:8px}.link-ui-block-inserter{padding-top:8px}.link-ui-block-inserter__back{margin-left:8px;text-transform:uppercase}
+/*# sourceURL=http://localhost:8080/wordpress/wp-includes/blocks/navigation-link/style.min.css */
+</style>
+<style id="wp-block-navigation-inline-css">
+.wp-block-navigation{position:relative}.wp-block-navigation ul{margin-bottom:0;margin-left:0;margin-top:0;padding-left:0}.wp-block-navigation ul,.wp-block-navigation ul li{list-style:none}.wp-block-navigation .wp-block-navigation-item{align-items:center;background-color:inherit;display:flex;position:relative}.wp-block-navigation .wp-block-navigation-item .wp-block-navigation__submenu-container:empty{display:none}.wp-block-navigation .wp-block-navigation-item__content{display:block;z-index:1}.wp-block-navigation .wp-block-navigation-item__content.wp-block-navigation-item__content{color:inherit}.wp-block-navigation.has-text-decoration-underline .wp-block-navigation-item__content,.wp-block-navigation.has-text-decoration-underline .wp-block-navigation-item__content:active,.wp-block-navigation.has-text-decoration-underline .wp-block-navigation-item__content:focus{text-decoration:underline}.wp-block-navigation.has-text-decoration-line-through .wp-block-navigation-item__content,.wp-block-navigation.has-text-decoration-line-through .wp-block-navigation-item__content:active,.wp-block-navigation.has-text-decoration-line-through .wp-block-navigation-item__content:focus{text-decoration:line-through}.wp-block-navigation :where(a),.wp-block-navigation :where(a:active),.wp-block-navigation :where(a:focus){text-decoration:none}.wp-block-navigation .wp-block-navigation__submenu-icon{align-self:center;background-color:inherit;border:none;color:currentColor;display:inline-block;font-size:inherit;height:.6em;line-height:0;margin-left:.25em;padding:0;width:.6em}.wp-block-navigation .wp-block-navigation__submenu-icon svg{stroke:currentColor;display:inline-block;height:inherit;margin-top:.075em;width:inherit}.wp-block-navigation{--navigation-layout-justification-setting:flex-start;--navigation-layout-direction:row;--navigation-layout-wrap:wrap;--navigation-layout-justify:flex-start;--navigation-layout-align:center}.wp-block-navigation.is-vertical{--navigation-layout-direction:column;--navigation-layout-justify:initial;--navigation-layout-align:flex-start}.wp-block-navigation.no-wrap{--navigation-layout-wrap:nowrap}.wp-block-navigation.items-justified-center{--navigation-layout-justification-setting:center;--navigation-layout-justify:center}.wp-block-navigation.items-justified-center.is-vertical{--navigation-layout-align:center}.wp-block-navigation.items-justified-right{--navigation-layout-justification-setting:flex-end;--navigation-layout-justify:flex-end}.wp-block-navigation.items-justified-right.is-vertical{--navigation-layout-align:flex-end}.wp-block-navigation.items-justified-space-between{--navigation-layout-justification-setting:space-between;--navigation-layout-justify:space-between}:where(.wp-block-navigation) ul li{padding:0}.wp-block-navigation .has-child .wp-block-navigation__submenu-container{align-items:normal;background-color:inherit;color:inherit;display:flex;flex-direction:column;opacity:0;position:absolute;z-index:2}@media not (prefers-reduced-motion){.wp-block-navigation .has-child .wp-block-navigation__submenu-container{transition:opacity .1s linear}}.wp-block-navigation .has-child .wp-block-navigation__submenu-container{height:0;overflow:hidden;visibility:hidden;width:0}.wp-block-navigation .has-child .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content{display:flex;flex-grow:1;padding:.5em 1em}.wp-block-navigation .has-child .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content .wp-block-navigation__submenu-icon{margin-left:auto;margin-right:0}.wp-block-navigation .has-child .wp-block-navigation__submenu-container .wp-block-navigation-item__content{margin:0}.wp-block-navigation .has-child .wp-block-navigation__submenu-container{left:-1px;top:100%}@media (min-width:782px){.wp-block-navigation .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container{left:100%;top:-1px}.wp-block-navigation .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container:before{background:transparent;content:"";display:block;height:100%;position:absolute;right:100%;width:.5em}.wp-block-navigation .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-icon{margin-right:.25em}.wp-block-navigation .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-icon svg{transform:rotate(-90deg)}}@media (hover:hover){.wp-block-navigation .has-child:not(.open-on-click):hover>.wp-block-navigation__submenu-container{height:auto;min-width:200px;opacity:1;overflow:visible;visibility:visible;width:auto}}.wp-block-navigation .has-child .wp-block-navigation-submenu__toggle[aria-expanded=true]~.wp-block-navigation__submenu-container,.wp-block-navigation .has-child:not(.open-on-click):not(.open-on-hover-click):focus-within>.wp-block-navigation__submenu-container{height:auto;min-width:200px;opacity:1;overflow:visible;visibility:visible;width:auto}.wp-block-navigation .has-child.open-always{align-items:var(--navigation-layout-align,initial);flex-direction:var(--navigation-layout-direction,initial);flex-wrap:var(--navigation-layout-wrap,wrap);gap:var(--wp--style--block-gap,2em)}.wp-block-navigation .has-child.open-always,.wp-block-navigation .has-child.open-always .wp-block-navigation-item{justify-content:var(--navigation-layout-justify,initial)}.wp-block-navigation .has-child.open-always .wp-block-navigation__submenu-container,.wp-block-navigation .has-child.open-always.wp-block-navigation-submenu{gap:var(--wp--style--block-gap,2em)}.wp-block-navigation .has-child.open-always .wp-block-navigation-item,.wp-block-navigation .has-child.open-always .wp-block-navigation__submenu-container,.wp-block-navigation .has-child.open-always.wp-block-navigation-submenu{padding-bottom:0;padding-top:0}.wp-block-navigation .has-child.open-always .wp-block-navigation__submenu-container{padding-left:var(--wp--style--block-gap,2em);padding-right:var(--wp--style--block-gap,2em)}.wp-block-navigation .has-child.open-always .wp-block-navigation__submenu-container .wp-block-navigation-item__content{padding:0}.wp-block-navigation .has-child.open-always .wp-block-navigation__submenu-container>.wp-block-navigation-item>.wp-block-navigation-item__content,.wp-block-navigation .has-child.open-always>.wp-block-navigation-item__content{flex-grow:0}.wp-block-navigation .has-child.open-always>.wp-block-navigation__submenu-container{background-color:transparent;border:none;color:inherit;flex-basis:100%;height:auto;opacity:1;overflow:visible;position:static;visibility:visible;width:auto}.wp-block-navigation.has-background .has-child .wp-block-navigation__submenu-container{left:0;top:100%}@media (min-width:782px){.wp-block-navigation.has-background .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container{left:100%;top:0}}.wp-block-navigation-submenu{display:flex;position:relative}.wp-block-navigation-submenu .wp-block-navigation__submenu-icon svg{stroke:currentColor}button.wp-block-navigation-item__content{background-color:transparent;border:none;color:currentColor;font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;text-align:left;text-transform:inherit}.wp-block-navigation-submenu__toggle{cursor:pointer}.wp-block-navigation-submenu__toggle[aria-expanded=true]+.wp-block-navigation__submenu-icon>svg,.wp-block-navigation-submenu__toggle[aria-expanded=true]>svg{transform:rotate(180deg)}.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle{padding-left:0;padding-right:.85em}.wp-block-navigation-item.open-on-click .wp-block-navigation-submenu__toggle+.wp-block-navigation__submenu-icon{margin-left:-.6em;pointer-events:none}.wp-block-navigation-item.open-on-click button.wp-block-navigation-item__content:not(.wp-block-navigation-submenu__toggle){padding:0}.wp-block-navigation .wp-block-page-list,.wp-block-navigation__container,.wp-block-navigation__responsive-close,.wp-block-navigation__responsive-container,.wp-block-navigation__responsive-container-content,.wp-block-navigation__responsive-dialog{gap:inherit}:where(.wp-block-navigation.has-background .wp-block-navigation-item a:not(.wp-element-button)),:where(.wp-block-navigation.has-background .wp-block-navigation-submenu a:not(.wp-element-button)){padding:.5em 1em}:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item a:not(.wp-element-button)),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-submenu a:not(.wp-element-button)),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-submenu button.wp-block-navigation-item__content),:where(.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-pages-list__item button.wp-block-navigation-item__content){padding:.5em 1em}.wp-block-navigation.items-justified-right .wp-block-navigation__container .has-child .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-right .wp-block-page-list>.has-child .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-space-between .wp-block-page-list>.has-child:last-child .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-space-between>.wp-block-navigation__container>.has-child:last-child .wp-block-navigation__submenu-container{left:auto;right:0}.wp-block-navigation.items-justified-right .wp-block-navigation__container .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-right .wp-block-page-list>.has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-space-between .wp-block-page-list>.has-child:last-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-space-between>.wp-block-navigation__container>.has-child:last-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container{left:-1px;right:-1px}@media (min-width:782px){.wp-block-navigation.items-justified-right .wp-block-navigation__container .has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-right .wp-block-page-list>.has-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-space-between .wp-block-page-list>.has-child:last-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container,.wp-block-navigation.items-justified-space-between>.wp-block-navigation__container>.has-child:last-child .wp-block-navigation__submenu-container .wp-block-navigation__submenu-container{left:auto;right:100%}}.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container{background-color:#fff;border:1px solid rgba(0,0,0,.15)}.wp-block-navigation.has-background .wp-block-navigation__submenu-container{background-color:inherit}.wp-block-navigation:not(.has-text-color) .wp-block-navigation__submenu-container{color:#000}.wp-block-navigation__container{align-items:var(--navigation-layout-align,initial);display:flex;flex-direction:var(--navigation-layout-direction,initial);flex-wrap:var(--navigation-layout-wrap,wrap);justify-content:var(--navigation-layout-justify,initial);list-style:none;margin:0;padding-left:0}.wp-block-navigation__container .is-responsive{display:none}.wp-block-navigation__container:only-child,.wp-block-page-list:only-child{flex-grow:1}@keyframes overlay-menu__fade-in-animation{0%{opacity:0;transform:translateY(.5em)}to{opacity:1;transform:translateY(0)}}.wp-block-navigation__responsive-container{bottom:0;display:none;left:0;position:fixed;right:0;top:0}.wp-block-navigation__responsive-container :where(.wp-block-navigation-item a){color:inherit}.wp-block-navigation__responsive-container .wp-block-navigation__responsive-container-content{align-items:var(--navigation-layout-align,initial);display:flex;flex-direction:var(--navigation-layout-direction,initial);flex-wrap:var(--navigation-layout-wrap,wrap);justify-content:var(--navigation-layout-justify,initial)}.wp-block-navigation__responsive-container:not(.is-menu-open.is-menu-open){background-color:inherit!important;color:inherit!important}.wp-block-navigation__responsive-container.is-menu-open{background-color:inherit;display:flex;flex-direction:column}@media not (prefers-reduced-motion){.wp-block-navigation__responsive-container.is-menu-open{animation:overlay-menu__fade-in-animation .1s ease-out;animation-fill-mode:forwards}}.wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay){padding:clamp(1rem,var(--wp--style--root--padding-top),20rem) clamp(1rem,var(--wp--style--root--padding-right),20rem) clamp(1rem,var(--wp--style--root--padding-bottom),20rem) clamp(1rem,var(--wp--style--root--padding-left),20rem)}.wp-block-navigation__responsive-container.is-menu-open{overflow:auto;z-index:100000}.wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay) .wp-block-navigation__responsive-container-content{padding-top:calc(2rem + 24px)}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content{align-items:var(--navigation-layout-justification-setting,inherit);display:flex;flex-direction:column;flex-wrap:nowrap;overflow:visible}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation__container,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-page-list{justify-content:flex-start}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-icon{display:none}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .has-child .wp-block-navigation__submenu-container{border:none;height:auto;min-width:200px;opacity:1;overflow:initial;padding-left:2rem;padding-right:2rem;position:static;visibility:visible;width:auto}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation__container,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container{gap:inherit}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation__submenu-container{padding-top:var(--wp--style--block-gap,2em)}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation-item__content{padding:0}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation-item,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-navigation__container,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-container-content .wp-block-page-list{align-items:var(--navigation-layout-justification-setting,initial);display:flex;flex-direction:column}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation-item,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation-item .wp-block-navigation__submenu-container,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__container,.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-page-list{background:transparent!important;color:inherit!important}.wp-block-navigation__responsive-container.is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container{left:auto;right:auto}.wp-block-navigation__responsive-container.disable-default-overlay .wp-block-navigation__overlay-container{display:none;width:100%}.wp-block-navigation__responsive-container.disable-default-overlay .wp-block-navigation__responsive-close{max-width:none}.wp-block-navigation__responsive-container.disable-default-overlay.is-menu-open .wp-block-navigation__responsive-container-content>:not(.wp-block-navigation__overlay-container){display:none}.wp-block-navigation__responsive-container.disable-default-overlay.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__overlay-container{display:block}.wp-block-navigation__responsive-container.disable-default-overlay.is-menu-open .wp-block-navigation__responsive-container-content .wp-block-navigation__overlay-container .wp-block-navigation__submenu-container{left:0;right:auto}@media (min-width:600px){.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open){background-color:inherit;display:block;position:relative;width:100%;z-index:auto}.wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) .wp-block-navigation__responsive-container-close{display:none}.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container.wp-block-navigation__submenu-container{left:0}}.wp-block-navigation:not(.has-background) .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay){background-color:#fff}.wp-block-navigation:not(.has-text-color) .wp-block-navigation__responsive-container.is-menu-open:not(.disable-default-overlay){color:#000}.wp-block-navigation__toggle_button_label{font-size:1rem;font-weight:700}.wp-block-navigation__responsive-container-close,.wp-block-navigation__responsive-container-open{background:transparent;border:none;color:currentColor;cursor:pointer;margin:0;padding:0;text-transform:inherit;vertical-align:middle}.wp-block-navigation__responsive-container-close svg,.wp-block-navigation__responsive-container-open svg{fill:currentColor;display:block;height:24px;pointer-events:none;width:24px}.wp-block-navigation__responsive-container-open{display:flex}.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open.wp-block-navigation__responsive-container-open{font-family:inherit;font-size:inherit;font-weight:inherit}@media (min-width:600px){.wp-block-navigation__responsive-container-open:not(.always-shown){display:none}}.wp-block-navigation__responsive-container-close{position:absolute;right:0;top:0;z-index:2}.wp-block-navigation__responsive-container-close.wp-block-navigation__responsive-container-close.wp-block-navigation__responsive-container-close{font-family:inherit;font-size:inherit;font-weight:inherit}.disable-default-overlay .wp-block-navigation__responsive-container-close{right:clamp(1rem,var(--wp--style--root--padding-left),20rem);top:clamp(1rem,var(--wp--style--root--padding-left),20rem)}.wp-block-navigation__responsive-close{width:100%}.has-modal-open .wp-block-navigation__responsive-close{margin-left:auto;margin-right:auto;max-width:var(--wp--style--global--wide-size,100%)}.wp-block-navigation__responsive-close:focus{outline:none}.is-menu-open .wp-block-navigation__responsive-close,.is-menu-open .wp-block-navigation__responsive-container-content,.is-menu-open .wp-block-navigation__responsive-dialog{box-sizing:border-box}.wp-block-navigation__responsive-dialog{position:relative}.has-modal-open .admin-bar .is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-dialog{margin-top:46px}@media (min-width:782px){.has-modal-open .admin-bar .is-menu-open:where(:not(.disable-default-overlay)) .wp-block-navigation__responsive-dialog{margin-top:32px}}html.has-modal-open{overflow:hidden}
+/*# sourceURL=http://localhost:8080/wordpress/wp-includes/blocks/navigation/style.min.css */
+</style>
+<style id="wp-block-group-inline-css">
+.wp-block-group{box-sizing:border-box}:where(.wp-block-group.wp-block-group-is-layout-constrained){position:relative}
+/*# sourceURL=http://localhost:8080/wordpress/wp-includes/blocks/group/style.min.css */
+</style>
+<style id="wp-block-post-content-inline-css">
+.wp-block-post-content{display:flow-root}
+/*# sourceURL=http://localhost:8080/wordpress/wp-includes/blocks/post-content/style.min.css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #2563eb;--wp--preset--color--secondary: #0f172a;--wp--preset--color--accent: #38bdf8;--wp--preset--color--fondo: #f1f5f9;--wp--preset--color--texto: #1e293b;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--sistema: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 1200px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{background-color: #f1f5f9;color: #1e293b;font-family: var(--wp--preset--font-family--sistema);font-size: 1rem;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){color: #2563eb;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-accent-color{color: var(--wp--preset--color--accent) !important;}.has-fondo-color{color: var(--wp--preset--color--fondo) !important;}.has-texto-color{color: var(--wp--preset--color--texto) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-accent-background-color{background-color: var(--wp--preset--color--accent) !important;}.has-fondo-background-color{background-color: var(--wp--preset--color--fondo) !important;}.has-texto-background-color{background-color: var(--wp--preset--color--texto) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-accent-border-color{border-color: var(--wp--preset--color--accent) !important;}.has-fondo-border-color{border-color: var(--wp--preset--color--fondo) !important;}.has-texto-border-color{border-color: var(--wp--preset--color--texto) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-sistema-font-family{font-family: var(--wp--preset--font-family--sistema) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<style id="core-block-supports-inline-css">
+.wp-container-core-navigation-is-layout-04fdb8e5{justify-content:flex-end;}.wp-container-core-group-is-layout-6e98a710{justify-content:space-between;}
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+<style id="wp-block-template-skip-link-inline-css">
+/*! This file is auto-generated */
+.skip-link.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;word-break:normal!important}.skip-link.screen-reader-text:focus{background-color:#eee;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
+/*# sourceURL=/wp-includes/css/wp-block-template-skip-link.min.css */
+</style>
+<link rel="stylesheet" id="devconecta-style-css" href="./MEDIFORMENT=Control de medidas de uniforme_files/style.css" media="all">
+<link rel="https://api.w.org/" href="http://localhost:8080/wordpress/wp-json/"><link rel="alternate" title="JSON" type="application/json" href="http://localhost:8080/wordpress/wp-json/wp/v2/pages/54"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://localhost:8080/wordpress/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.1.3">
+<link rel="canonical" href="http://localhost:8080/wordpress/medit-control/">
+<link rel="shortlink" href="http://localhost:8080/wordpress/?p=54">
+<script src="./MEDIFORMENT=Control de medidas de uniforme_files/wp-emoji-release.min.js.descargar" defer=""></script></head>
+
+<body class="wp-singular page-template-default page page-id-54 wp-embed-responsive wp-theme-devconecta">
+
+<a class="skip-link screen-reader-text" id="wp-skip-link" href="http://localhost:8080/wordpress/medit-control/#wp--skip-link--target">Saltar al contenido</a><div class="wp-site-blocks"><header class="wp-block-template-part">
+<header class="wp-block-group cm-header is-content-justification-space-between is-layout-flex wp-container-core-group-is-layout-6e98a710 wp-block-group-is-layout-flex">
+<p class="cm-logo wp-block-paragraph"><img draggable="false" role="img" class="emoji" alt="⚙️" src="./MEDIFORMENT=Control de medidas de uniforme_files/2699.svg"> CodeMarket</p>
+
+
+<nav class="items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigation-is-layout-04fdb8e5 wp-block-navigation-is-layout-flex"><ul class="wp-block-navigation__container items-justified-right wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="http://localhost:8080/wordpress/"><span class="wp-block-navigation-item__label">Inicio</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="http://localhost:8080/wordpress/perfil-proveedor/"><span class="wp-block-navigation-item__label">Mi Perfil</span></a></li></ul></nav></header>
+
+</header>
+
+
+<main id="wp--skip-link--target" class="wp-block-group cm-main is-layout-flow wp-block-group-is-layout-flow"><div class="entry-content wp-block-post-content is-layout-flow wp-block-post-content-is-layout-flow">
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEDITFOR | Control de uniformes</title>
+<style>
+:root {
+  --ink: #192541;
+  --muted: #8590a6;
+  --purple: #6556e8;
+  --lav: #f0eeff;
+  --green: #20ad99;
+  --orange: #ed9c51;
+  --blue: #5598ef;
+  --line: #edf0f6;
+  --bg: #f7f8fc;
+  --side: 250px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 14px;
+}
+
+a { text-decoration: none; color: inherit; }
+button, input, select { font: inherit; }
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--side);
+  padding: 27px 18px 17px;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  overflow: auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 8px 36px;
+}
+
+.logo, .contact-logo {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #8175ff, #5142d4);
+  color: white;
+  font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 8px 20px #6556e82e;
+}
+
+.brand b { font-size: 15px; letter-spacing: .5px; }
+
+.brand small, .profile small {
+  display: block;
+  font-size: 8px;
+  color: #9aa3b5;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.menu-label, .eyebrow {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #9aa2b4;
+}
+
+.menu-label { padding-left: 12px; margin-bottom: 13px; }
+nav { display: grid; gap: 6px; }
+
+.nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 13px;
+  border-radius: 10px;
+  color: #7d879d;
+  font-size: 18px;
+  transition: .2s;
+}
+
+.nav span { font-size: 12px; font-weight: 600; }
+.nav:hover { background: #f8f7ff; color: var(--purple); transform: translateX(2px); }
+.nav.active { background: var(--lav); color: var(--purple); box-shadow: inset 3px 0 var(--purple); }
+
+.side-bottom { margin-top: auto; }
+
+.help {
+  padding: 16px;
+  margin: 25px 0 18px;
+  background: linear-gradient(135deg, #f0eeff, #f9f8ff);
+  border-radius: 15px;
+}
+
+.spark {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  color: var(--purple);
+  border-radius: 9px;
+  margin-bottom: 10px;
+}
+
+.help b { font-size: 12px; }
+.help p { font-size: 10px; line-height: 1.6; color: var(--muted); }
+.help a, .text-link { font-size: 10px; font-weight: 800; color: var(--purple); }
+
+.profile {
+  border-top: 1px solid var(--line);
+  padding: 16px 3px 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar, .top-avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: #e9e6ff;
+  color: var(--purple);
+  border-radius: 11px;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.profile b { font-size: 10px; }
+.profile small { letter-spacing: 0; font-size: 9px; }
+
+.main {
+  margin-left: var(--side);
+  padding: 0 32px 23px;
+  max-width: 1700px;
+}
+
+.topbar {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e9ecf3;
+}
+
+.crumb { font-size: 11px; color: #9aa3b5; }
+.crumb span { padding: 0 9px; color: #c9ced9; }
+.crumb b { color: #45516b; }
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  color: #929bb0;
+  font-size: 10px;
+}
+
+.top-avatar { border-radius: 50%; }
+.hamburger { display: none; border: 0; background: #fff; padding: 8px; border-radius: 8px; }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 25px;
+  padding: 28px 0 18px;
+  min-height: 335px;
+}
+
+.eyebrow { margin: 0; }
+.eyebrow i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  margin-right: 7px;
+  box-shadow: 0 0 0 4px #20ad991c;
+}
+
+.hero h1 {
+  font-size: clamp(31px, 3.3vw, 45px);
+  line-height: 1.13;
+  letter-spacing: -1.8px;
+  margin: 18px 0 13px;
+  font-weight: 900;
+}
+
+.hero h1 em, .mission h2 em { color: var(--purple); font-style: normal; }
+
+.intro {
+  max-width: 450px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.primary { color: #fff; background: var(--purple); box-shadow: 0 8px 18px #6556e82b; }
+.primary:hover { background: #5142d4; }
+.light { background: #fff; color: #606c84; border: 1px solid #e8ebf3; }
+.light:hover { color: var(--purple); border-color: #c7c0ff; }
+
+.hero-art {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #e8e5ff, #f5f3ff 53%, #def8f2);
+}
+
+.ring { position: absolute; border: 1px solid #ffffffb5; border-radius: 50%; }
+.r1 { width: 245px; height: 245px; }
+.r2 { width: 185px; height: 185px; background: #ffffff35; }
+
+.shirt {
+  position: relative;
+  z-index: 2;
+  width: 137px;
+  height: 158px;
+  background: linear-gradient(120deg, #fff, #f4f4fc);
+  clip-path: polygon(28% 0,42% 8%,58% 8%,72% 0,100% 20%,83% 44%,72% 35%,76% 100%,24% 100%,28% 35%,17% 44%,0 20%);
+  filter: drop-shadow(0 15px 15px #6258b522);
+}
+
+.collar {
+  position: absolute;
+  top: 0;
+  left: 42px;
+  width: 52px;
+  height: 37px;
+  background: #d8d7f4;
+  clip-path: polygon(0 0,50% 30%,100% 0,74% 100%,50% 72%,26% 100%);
+}
+
+.pocket { position: absolute; top: 57px; right: 22px; width: 22px; height: 25px; border: 1px solid #d5d6e7; }
+.shirt i { position: absolute; left: 66px; top: 47px; width: 4px; height: 4px; background: #c6c6dc; border-radius: 50%; }
+.shirt i:nth-of-type(2) { top: 65px; }
+.shirt i:nth-of-type(3) { top: 83px; }
+
+.float-tag {
+  position: absolute;
+  z-index: 3;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 10px;
+  font-weight: 800;
+  box-shadow: 0 9px 25px #343b6110;
+}
+
+.tag1 { top: 28px; right: 18px; }
+.tag2 { bottom: 26px; left: 18px; color: var(--green); }
+
+.art-label {
+  position: absolute;
+  bottom: 20px;
+  right: 19px;
+  text-align: right;
+  color: #a4a0d4;
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.art-label small { display: block; color: #9ba4b9; font-size: 8px; letter-spacing: 0; font-weight: 500; margin-top: 4px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 10px 0 21px; }
+.stat, .panel { background: #fff; border: 1px solid #eef0f6; border-radius: 15px; box-shadow: 0 5px 22px #25345c04; }
+.stat { padding: 16px 17px; transition: .2s; }
+.stat:hover { transform: translateY(-3px); box-shadow: 0 12px 25px #25345c0c; }
+.stat-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 13px; }
+.stat-icon, .quick-icon { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 11px; font-size: 18px; }
+.purple { color: var(--purple); background: #f0eeff; }
+.green { color: var(--green); background: #e5faf5; }
+.orange { color: var(--orange); background: #fff2e6; }
+.blue { color: var(--blue); background: #eaf3ff; }
+.chip { font-size: 9px; padding: 5px 7px; background: #f7f8fb; border-radius: 6px; color: #9aa3b5; }
+.stat p { font-size: 10px; color: #7c879d; margin: 0 0 7px; }
+.stat > strong { font-size: 29px; letter-spacing: -1px; }
+.stat > small { display: block; color: #a4adbd; font-size: 9px; margin-top: 5px; }
+.stat .percent { display: inline; font-size: 15px; }
+
+.two-col { display: grid; grid-template-columns: 1.05fr .95fr; gap: 17px; margin-bottom: 18px; }
+.panel { padding: 22px; min-width: 0; }
+.heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.heading h2 { font-size: 19px; letter-spacing: -.5px; margin: 7px 0 0; }
+.star { font-size: 22px; color: #a59cf8; }
+.quick { display: grid; gap: 5px; }
+.quick a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; transition: .2s; }
+.quick a:hover { background: #f8f8fd; }
+.quick-icon { flex-shrink: 0; }
+.quick a > span:nth-child(2) { display: grid; gap: 4px; }
+.quick b { font-size: 10px; }
+.quick small { font-size: 9px; color: #9ba4b5; }
+.quick a > strong { margin-left: auto; color: #b1b8c7; }
+
+.mission { position: relative; overflow: hidden; background: linear-gradient(135deg, #f3f1ff, #fff 78%); }
+.mission-badge { display: inline-block; background: #e9e6ff; color: var(--purple); font-size: 8px; font-weight: 900; letter-spacing: 1px; padding: 7px 9px; border-radius: 7px; }
+.mission h2 { font-size: 24px; line-height: 1.25; margin: 17px 0 10px; position: relative; z-index: 1; }
+.mission p { font-size: 10px; line-height: 1.8; color: #7f8aa0; position: relative; z-index: 1; }
+.mission ul { padding: 0; list-style: none; display: grid; gap: 8px; font-size: 10px; color: #65718b; position: relative; z-index: 1; }
+.mission li::first-letter { color: var(--green); }
+.text-link { position: relative; z-index: 1; display: inline-block; margin-top: 4px; }
+.watermark { position: absolute; right: 3px; bottom: -40px; font-size: 170px; font-weight: 900; color: #6556e808; }
+
+.sub { font-size: 10px; color: #98a1b3; margin: 7px 0 0; }
+.badge { padding: 8px 10px; border-radius: 8px; color: var(--purple); background: var(--lav); font-size: 10px; font-weight: 800; white-space: nowrap; }
+.student-form { display: grid; grid-template-columns: 1.2fr .8fr .8fr auto; gap: 11px; align-items: end; margin-bottom: 20px; }
+label { display: grid; gap: 7px; color: #69758d; font-size: 10px; font-weight: 700; }
+input, select { width: 100%; min-width: 0; height: 39px; border: 1px solid #e7eaf2; border-radius: 9px; background: #fbfcff; padding: 0 10px; outline: none; font-size: 10px; color: #35415b; }
+input:focus, select:focus { border-color: #aaa2ff; box-shadow: 0 0 0 3px #6556e812; }
+input::placeholder { color: #b3bbca; }
+.student-form .btn { height: 39px; white-space: nowrap; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; min-width: 510px; border-collapse: collapse; text-align: left; }
+th { font-size: 9px; color: #a1a9b9; background: #fafbfe; padding: 12px; font-weight: 800; }
+td { font-size: 10px; color: #5e6a82; padding: 13px 12px; border-bottom: 1px solid #f0f2f7; }
+td:first-child { font-weight: 700; color: #303d58; }
+tbody tr:last-child td { border-bottom: 0; }
+.empty td { text-align: center; color: #a4adbd; padding: 23px; font-weight: 500; }
+.delete { border: 0; border-radius: 7px; padding: 6px 8px; background: #fff0f0; color: #d36a72; cursor: pointer; font-size: 9px; }
+.lower { align-items: start; }
+.lower .heading { margin-bottom: 15px; }
+.lower .sub { line-height: 1.7; margin: -5px 0 17px; }
+.stack { display: grid; gap: 12px; }
+.sizes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.saved { display: grid; gap: 8px; margin-top: 17px; }
+.empty-note { font-size: 10px; color: #a4adbd; margin: 0; padding: 12px; background: #fafbfe; border-radius: 9px; }
+.saved-item { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; }
+.saved-item b { display: block; font-size: 10px; color: #35415b; }
+.saved-item small { display: block; font-size: 9px; color: #99a3b5; margin-top: 4px; }
+.pill { font-size: 9px; font-weight: 800; padding: 6px 8px; border-radius: 7px; color: #159b86; background: #e4faf5; white-space: nowrap; }
+.status-select { max-width: 130px; height: 30px; font-size: 9px; padding: 0 6px; }
+
+.report-grid { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 13px; align-items: center; }
+.report-grid > div { padding: 13px; background: #fafbfe; border-radius: 10px; }
+.report-grid b { display: block; font-size: 20px; }
+.report-grid small { display: block; color: #9ba4b5; font-size: 9px; margin-top: 4px; }
+.note { font-size: 9px; line-height: 1.7; color: #a1a9b9; margin: 15px 0 0; }
+
+.contact { display: flex; align-items: center; gap: 14px; padding: 19px; margin-bottom: 20px; border-radius: 15px; background: linear-gradient(105deg, #6556e8, #8174f5); color: #fff; }
+.contact-logo { background: #ffffff25; box-shadow: none; }
+.contact b { font-size: 12px; }
+.contact p { font-size: 9px; color: #e3e0ff; margin: 5px 0 0; }
+.contact .btn { margin-left: auto; color: var(--purple); border: 0; }
+
+footer { display: flex; justify-content: space-between; align-items: center; gap: 14px; color: #a1a9b9; font-size: 9px; }
+footer div { display: grid; gap: 4px; }
+footer b { color: #606c85; font-size: 11px; letter-spacing: .5px; }
+footer small { font-size: 9px; }
+footer p { margin: 0; }
+footer > a { color: var(--purple); font-weight: 800; white-space: nowrap; }
+
+.toast {
+  position: fixed; right: 22px; bottom: 22px; background: #202b47;
+  color: #fff; padding: 13px 17px; border-radius: 10px;
+  box-shadow: 0 12px 35px #17233e25; font-size: 11px;
+  opacity: 0; transform: translateY(10px); pointer-events: none;
+  transition: .25s; z-index: 100;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1150px) {
+  :root { --side: 220px; }
+  .main { padding: 0 22px 20px; }
+  .student-form { grid-template-columns: 1fr 1fr; }
+  .student-form .btn { width: 100%; }
+  .report-grid { grid-template-columns: repeat(3, 1fr); }
+  .report-grid .btn { grid-column: 1 / -1; justify-self: start; }
+}
+
+@media (max-width: 820px) {
+  .sidebar { transform: translateX(-105%); transition: transform .25s; box-shadow: none; }
+  .sidebar.open { transform: translateX(0); box-shadow: 15px 0 45px #18244320; }
+  .main { margin-left: 0; padding: 0 18px 20px; }
+  .hamburger { display: block; }
+  .topbar { gap: 12px; }
+  .crumb { margin-right: auto; }
+  .top-right > span:first-child { display: none; }
+  .hero { grid-template-columns: 1fr; padding-top: 30px; }
+  .hero-art { height: 245px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .two-col { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .main { padding: 0 12px 16px; }
+  .topbar { height: 64px; }
+  .top-right { gap: 8px; }
+  .hero h1 { font-size: 34px; }
+  .intro { font-size: 11px; }
+  .stats { gap: 8px; }
+  .stat { padding: 12px; }
+  .stat > strong { font-size: 25px; }
+  .stat p { min-height: 25px; line-height: 1.4; }
+  .panel { padding: 16px 13px; }
+  .heading h2 { font-size: 17px; }
+  .student-form { grid-template-columns: 1fr; }
+  .student-form .btn { width: 100%; }
+  .report-grid { grid-template-columns: 1fr; }
+  .report-grid .btn { grid-column: auto; width: 100%; }
+  .contact { flex-wrap: wrap; padding: 15px; }
+  .contact .btn { margin-left: 0; width: 100%; }
+  footer { flex-wrap: wrap; line-height: 1.6; }
+  footer p { order: 3; width: 100%; }
+  .float-tag { font-size: 9px; }
+  .tag1 { right: 9px; top: 13px; }
+  .tag2 { left: 9px; bottom: 13px; }
+}
+
+/* Formulario de estudiante con más campos */
+.student-form {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.student-form .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+@media (max-width: 520px) {
+  .student-form { grid-template-columns: 1fr; }
+  .student-form .btn { justify-self: stretch; }
+}
+
+/* Pantalla de confirmación */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(25, 37, 65, .55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+  z-index: 200;
+}
+.modal.show { opacity: 1; pointer-events: auto; }
+
+.modal-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 28px 24px 22px;
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(23, 35, 62, .3);
+  transform: translateY(14px) scale(.97);
+  transition: transform .25s;
+}
+.modal.show .modal-box { transform: none; }
+
+.modal-check {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #e5faf5;
+  color: var(--green);
+  font-size: 28px;
+  font-weight: 900;
+}
+.modal-box h3 { margin: 0 0 6px; font-size: 20px; letter-spacing: -.4px; }
+.modal-sub { margin: 0 0 18px; font-size: 11px; color: var(--muted); }
+
+.modal-data {
+  margin: 0 0 18px;
+  padding: 6px 14px;
+  background: #fafbfe;
+  border-radius: 12px;
+  text-align: left;
+}
+.modal-data div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0f2f7;
+}
+.modal-data div:last-child { border-bottom: 0; }
+.modal-data dt { font-size: 10px; color: #9ba4b5; }
+.modal-data dd { margin: 0; font-size: 11px; font-weight: 700; color: #303d58; text-align: right; }
+
+.modal-bar {
+  height: 4px;
+  margin-bottom: 16px;
+  background: #eef0f6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.modal-bar i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--purple);
+  transform-origin: left;
+}
+@keyframes modalBar {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+/* ===== Pantalla de ingreso de institución ===== */
+body.gate-open { overflow: hidden; }
+.gate {
+  position: fixed; inset: 0; z-index: 300;
+  display: grid; place-items: center; padding: 18px;
+  background: linear-gradient(135deg, #e8e5ff, #f5f3ff 53%, #def8f2);
+  overflow: auto;
+}
+.gate.hide { display: none; }
+.gate-box {
+  width: 100%; max-width: 400px; padding: 30px 26px 26px;
+  background: #fff; border-radius: 22px; text-align: center;
+  box-shadow: 0 25px 60px rgba(23, 35, 62, .18);
+}
+.gate-box .logo { margin: 0 auto 16px; }
+.gate-box h2 { margin: 0 0 6px; font-size: 21px; letter-spacing: -.5px; }
+.gate-box .sub { margin: 0 0 22px; }
+.gate-form { display: grid; gap: 14px; text-align: left; }
+.gate-form .btn { height: 42px; margin-top: 4px; }
+.gate-error { min-height: 14px; margin: 0; font-size: 10px; color: #d36a72; text-align: center; }
+.top-right .btn { min-height: 30px; padding: 0 10px; }
+</style>
+
+
+
+<!-- Pantalla de ingreso de la institución -->
+<div class="gate hide" id="gate">
+  <form class="gate-box" id="gateForm" novalidate="">
+    <span class="logo">MF</span>
+    <h2>Ingresar a MEDITFOR</h2>
+    <p class="sub">Escribe los datos de tu institución para continuar.</p>
+    <div class="gate-form">
+      <label>Ingrese nombre de la institución<input id="instName" placeholder="Ej. Instituto Nacional de San Salvador" autocomplete="off"></label>
+      <label>Ingrese código de la institución<input id="instCode" placeholder="Ej. 10001" autocomplete="off"></label>
+      <p class="gate-error" id="gateError"></p>
+      <button class="btn primary" type="submit">Ingresar →</button>
+    </div>
+  </form>
+</div>
+
+<aside class="sidebar" id="sidebar">
+  <a href="http://localhost:8080/wordpress/medit-control/#inicio" class="brand">
+    <span class="logo">MF</span>
+    <span><b>MEDITFOR</b><small>CONTROL DE UNIFORMES</small></span>
+  </a>
+
+  <p class="menu-label">MENÚ PRINCIPAL</p>
+  <nav>
+    <a class="nav" href="http://localhost:8080/wordpress/medit-control/#inicio">⌂ <span>Inicio</span></a>
+    <a class="nav" href="http://localhost:8080/wordpress/medit-control/#estudiantes">♙ <span>Estudiantes</span></a>
+    <a class="nav" href="http://localhost:8080/wordpress/medit-control/#medidas">⌁ <span>Control de tallas</span></a>
+    <a class="nav" href="http://localhost:8080/wordpress/medit-control/#pedidos">▤ <span>Pedidos</span></a>
+    <a class="nav active" href="http://localhost:8080/wordpress/medit-control/#reportes">▥ <span>Reportes</span></a>
+    <a class="nav" href="http://localhost:8080/wordpress/medit-control/#nosotros">✦ <span>Sobre MEDITFOR</span></a>
+  </nav>
+
+  <div class="side-bottom">
+    <div class="help">
+      <span class="spark">✦</span>
+      <b>¿Necesitas ayuda?</b>
+      <p>Organiza las tallas de forma fácil y rápida.</p>
+      <a href="http://localhost:8080/wordpress/medit-control/#contacto">Contactar ↗</a>
+    </div>
+    <div class="profile">
+      <span class="avatar">MF</span>
+      <span><b>Administrador</b><small id="profileInst">Mangini · 11445</small></span>
+    </div>
+  </div>
+</aside>
+
+<main class="main" id="inicio">
+  <header class="topbar">
+    <button id="menuToggle" class="hamburger" type="button">☰</button>
+    <div class="crumb">Panel de control <span>/</span> <b>Inicio</b></div>
+    <div class="top-right">
+      <span id="today">miércoles, 11 de noviembre de 2026</span>
+      <button type="button" class="btn light" id="changeInst">Cambiar institución</button>
+      <span class="top-avatar">MF</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><i></i> PLATAFORMA DE GESTIÓN ESCOLAR</p>
+      <h1>Controla las tallas.<br><em>Organiza mejor.</em></h1>
+      <p class="intro">
+        Bienvenido a MEDITFOR, tu espacio para gestionar las medidas
+        y los pedidos de uniformes estudiantiles de manera ordenada.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="http://localhost:8080/wordpress/medit-control/#estudiantes">＋ Registrar estudiante</a>
+        <a class="btn light" href="http://localhost:8080/wordpress/medit-control/#medidas">Ver tallas →</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="shirt">
+        <span class="collar"></span>
+        <span class="pocket"></span>
+        <i></i><i></i><i></i>
+      </div>
+      <span class="float-tag tag1">✓ Datos organizados</span>
+      <span class="float-tag tag2">↗ Gestión sencilla</span>
+      <div class="art-label">MEDITFOR<small>Uniformes bajo control</small></div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <article class="stat">
+      <div class="stat-top"><span class="stat-icon purple">♙</span><span class="chip">Registro</span></div>
+      <p>Estudiantes registrados</p>
+      <strong id="studentCount">0</strong>
+      <small>En esta demostración</small>
+    </article>
+    <article class="stat">
+      <div class="stat-top"><span class="stat-icon green">⌁</span><span class="chip">Medidas</span></div>
+      <p>Fichas de tallas</p>
+      <strong id="sizeCount">0</strong>
+      <small>Registros guardados</small>
+    </article>
+    <article class="stat">
+      <div class="stat-top"><span class="stat-icon orange">▤</span><span class="chip">Pedidos</span></div>
+      <p>Pedidos pendientes</p>
+      <strong id="pendingCount">0</strong>
+      <small>Por preparar o entregar</small>
+    </article>
+    <article class="stat">
+      <div class="stat-top"><span class="stat-icon blue">✓</span><span class="chip">Organización</span></div>
+      <p>Control actualizado</p>
+      <strong>100<small class="percent">%</small></strong>
+      <small>Interfaz de demostración</small>
+    </article>
+  </section>
+
+  <section class="two-col">
+    <article class="panel">
+      <div class="heading">
+        <div><p class="eyebrow">ACCESOS RÁPIDOS</p><h2>¿Qué deseas hacer?</h2></div>
+        <span class="star">✦</span>
+      </div>
+      <div class="quick">
+        <a href="http://localhost:8080/wordpress/medit-control/#estudiantes"><span class="quick-icon purple">♙</span><span><b>Registrar estudiante</b><small>Agregar datos de alumno</small></span><strong>↗</strong></a>
+        <a href="http://localhost:8080/wordpress/medit-control/#medidas"><span class="quick-icon green">⌁</span><span><b>Guardar medidas</b><small>Consultar tallas de uniforme</small></span><strong>↗</strong></a>
+        <a href="http://localhost:8080/wordpress/medit-control/#pedidos"><span class="quick-icon orange">▤</span><span><b>Administrar pedidos</b><small>Revisar estado de pedidos</small></span><strong>↗</strong></a>
+        <a href="http://localhost:8080/wordpress/medit-control/#reportes"><span class="quick-icon blue">▥</span><span><b>Ver reportes</b><small>Resumen de registros</small></span><strong>↗</strong></a>
+      </div>
+    </article>
+
+    <article class="panel mission" id="nosotros">
+      <span class="mission-badge">✦ NUESTRA PROPUESTA</span>
+      <h2>Menos desorden.<br><em>Más organización.</em></h2>
+      <p>MEDITFOR facilita el registro de estudiantes, el control de tallas y la administración de pedidos de uniformes desde un solo lugar.</p>
+      <ul>
+        <li>✓ Datos centralizados</li>
+        <li>✓ Búsqueda más rápida</li>
+        <li>✓ Menos errores manuales</li>
+      </ul>
+      <a class="text-link" href="http://localhost:8080/wordpress/medit-control/#contacto">Conoce el proyecto →</a>
+      <span class="watermark">MF</span>
+    </article>
+  </section>
+
+  <section class="panel" id="estudiantes">
+    <div class="heading">
+      <div><p class="eyebrow">REGISTRO ESCOLAR</p><h2>Estudiantes</h2><p class="sub">Añade alumnos a la lista de demostración.</p></div>
+      <span class="badge" id="tableCount">0 registros</span>
+    </div>
+    <form id="studentForm" class="student-form">
+      <label>Nombre completo<input id="studentName" placeholder="Ej. María López" required=""></label>
+      <label>Nie del estudiante<input id="studentCode" placeholder="Ej. EST-001" required=""></label>
+      <label>Grado y sección<input id="studentGrade" placeholder="Ej. 1.º A" required=""></label>
+      <label>Talla de camisa<select id="studentShirt"><option>XS</option><option>S</option><option selected="">M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
+      <label>Talla de pantalón<select id="studentPants"><option>XS</option><option>S</option><option selected="">M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
+      <label>Tipo de uniforme<select id="studentUniform"><option>Uniforme diario</option><option>Uniforme deportivo</option><option>Uniforme de gala</option></select></label>
+      <label>Número de calzado<input id="studentShoe" type="number" min="1" max="60" step="0.5" placeholder="Ej. 38"></label>
+      <button class="btn primary" type="submit">＋ Agregar y registrar pedido</button>
+    </form>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ESTUDIANTE</th><th>CÓDIGO</th><th>GRADO / SECCIÓN</th><th>ACCIÓN</th></tr></thead>
+        <tbody id="studentTable"><tr class="empty"><td colspan="4">Todavía no hay estudiantes. Agrega el primero usando el formulario.</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="two-col lower">
+    <article class="panel" id="medidas">
+      <div class="heading"><div><p class="eyebrow">FICHA DE MEDIDAS</p><h2>Control de tallas</h2></div><span class="quick-icon green">⌁</span></div>
+      <p class="sub">Registra las tallas de las prendas para mantener la información ordenada.</p>
+      <form id="sizeForm" class="stack">
+        <label>Estudiante<select id="sizeStudent" required=""><option value="">Selecciona un estudiante</option></select></label>
+        <div class="sizes">
+          <label>Camisa<select id="shirtSize"><option>XS</option><option>S</option><option selected="">M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
+          <label>Pantalón<select id="pantsSize"><option>XS</option><option>S</option><option selected="">M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
+        </div>
+        <!-- NUEVO: número de calzado -->
+        <label>Ingrese número de calzado<input id="shoeSize" type="number" min="1" max="60" step="0.5" placeholder="Ej. 38"></label>
+        <label>Observaciones<input id="sizeNotes" placeholder="Ej. Ajuste de manga"></label>
+        <button class="btn primary" type="submit">Guardar medidas</button>
+      </form>
+      <div class="saved" id="sizeList"><p class="empty-note">Las medidas guardadas aparecerán aquí.</p></div>
+    </article>
+
+    <article class="panel" id="pedidos">
+      <div class="heading"><div><p class="eyebrow">SEGUIMIENTO</p><h2>Pedidos de uniformes</h2></div><span class="quick-icon orange">▤</span></div>
+      <p class="sub">Crea un pedido y cambia su estado mientras se prepara.</p>
+      <form id="orderForm" class="stack">
+        <label>Estudiante<select id="orderStudent" required=""><option value="">Selecciona un estudiante</option></select></label>
+        <label>Tipo de uniforme<select id="orderType"><option>Uniforme diario</option><option>Uniforme deportivo</option><option>Uniforme de gala</option></select></label>
+        <button class="btn primary" type="submit">＋ Crear pedido</button>
+      </form>
+      <div class="saved" id="orderList"><p class="empty-note">Todavía no hay pedidos registrados.</p></div>
+    </article>
+  </section>
+
+  <section class="panel" id="reportes">
+    <div class="heading"><div><p class="eyebrow">VISTA GENERAL</p><h2>Resumen de registros</h2><p class="sub">Vista rápida de la información ingresada durante esta sesión.</p></div></div>
+    <div class="report-grid">
+      <div><b id="reportStudents">0</b><small>Estudiantes</small></div>
+      <div><b id="reportSizes">0</b><small>Fichas de tallas</small></div>
+      <div><b id="reportOrders">0</b><small>Pedidos creados</small></div>
+      <button class="btn light" id="exportBtn" type="button">Descargar CSV ↓</button>
+    </div>
+    <p class="note">Esta versión es una demostración. Los datos se mantienen mientras la página está abierta; para un uso real se necesita conectar una base de datos y un sistema de acceso.</p>
+  </section>
+
+  <section class="contact" id="contacto">
+    <span class="contact-logo">MF</span>
+    <div><b>¿Listos para organizar los uniformes?</b><p>MEDITFOR · Control de medidas de uniforme estudiantil</p></div>
+    <a class="btn light" href="http://localhost:8080/wordpress/medit-control/#inicio">Volver al inicio ↑</a>
+  </section>
+
+  <footer>
+    <div><b>MEDITFOR</b><small>Control de tallas de uniforme estudiantil</small></div>
+    <p>© <span id="year">2026</span> MEDITFOR. Proyecto académico de desarrollo de software.</p>
+    <a href="http://localhost:8080/wordpress/medit-control/#inicio">Volver arriba ↑</a>
+  </footer>
+</main>
+
+<!-- Pantalla de confirmación (dura 5 segundos) -->
+<div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+  <div class="modal-box">
+    <span class="modal-check">✓</span>
+    <h3 id="confirmTitle">¡Pedido registrado!</h3>
+    <p class="modal-sub">El estudiante y su pedido se guardaron correctamente.</p>
+    <dl class="modal-data">
+      <div><dt>Estudiante</dt><dd id="mdName"></dd></div>
+      <div><dt>Grado / sección</dt><dd id="mdGrade"></dd></div>
+      <div><dt>Talla de camisa</dt><dd id="mdShirt"></dd></div>
+      <div><dt>Talla de pantalón</dt><dd id="mdPants"></dd></div>
+      <div><dt>Número de calzado</dt><dd id="mdShoe"></dd></div>
+      <div><dt>Pedido</dt><dd id="mdOrder"></dd></div>
+    </dl>
+    <div class="modal-bar"><i id="modalBar"></i></div>
+    <button type="button" class="btn light" id="modalClose">Cerrar</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status">Bienvenido, Mangini.</div>
+
+<script>
+(function () {
+  "use strict";
+
+  function iniciar() {
+    // ---------- Estado ----------
+    var estudiantes = []; // {id, nombre, codigo, grado}
+    var medidas = [];     // {id, estudianteId, camisa, pantalon, calzado, notas}
+    var pedidos = [];     // {id, estudianteId, tipo, estado}
+    var contador = 0;
+
+    var ESTADOS = ["Pendiente", "En preparación", "Listo", "Entregado"];
+
+    // ---------- Utilidades ----------
+    function $(id) { return document.getElementById(id); }
+
+    function esc(texto) {
+      var d = document.createElement("div");
+      d.textContent = texto == null ? "" : String(texto);
+      return d.innerHTML;
+    }
+
+    function nombreDe(id) {
+      for (var i = 0; i < estudiantes.length; i++) {
+        if (estudiantes[i].id === id) return estudiantes[i].nombre;
+      }
+      return "(eliminado)";
+    }
+
+    var toastTimer;
+    function aviso(mensaje) {
+      var toast = $("toast");
+      if (!toast) return;
+      toast.textContent = mensaje;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2500);
+    }
+
+    // ---------- Render ----------
+    function renderEstudiantes() {
+      var tbody = $("studentTable");
+      if (!estudiantes.length) {
+        tbody.innerHTML =
+          '<tr class="empty"><td colspan="4">Todavía no hay estudiantes. Agrega el primero usando el formulario.</td></tr>';
+      } else {
+        tbody.innerHTML = estudiantes.map(function (e) {
+          return "<tr>" +
+            "<td>" + esc(e.nombre) + "</td>" +
+            "<td>" + esc(e.codigo) + "</td>" +
+            "<td>" + esc(e.grado) + "</td>" +
+            '<td><button type="button" class="delete" data-del="' + e.id + '">Eliminar</button></td>' +
+            "</tr>";
+        }).join("");
+      }
+      var n = estudiantes.length;
+      $("tableCount").textContent = n + (n === 1 ? " registro" : " registros");
+    }
+
+    function renderSelects() {
+      ["sizeStudent", "orderStudent"].forEach(function (id) {
+        var sel = $(id);
+        var actual = sel.value;
+        sel.innerHTML = '<option value="">Selecciona un estudiante</option>' +
+          estudiantes.map(function (e) {
+            return '<option value="' + e.id + '">' + esc(e.nombre) + " (" + esc(e.codigo) + ")</option>";
+          }).join("");
+        sel.value = actual; // conserva la selección si sigue existiendo
+      });
+    }
+
+    function renderMedidas() {
+      var cont = $("sizeList");
+      if (!medidas.length) {
+        cont.innerHTML = '<p class="empty-note">Las medidas guardadas aparecerán aquí.</p>';
+        return;
+      }
+      cont.innerHTML = medidas.map(function (m) {
+        return '<div class="saved-item">' +
+          "<div><b>" + esc(nombreDe(m.estudianteId)) + "</b>" +
+          "<small>Camisa " + esc(m.camisa) + " · Pantalón " + esc(m.pantalon) +
+          (m.calzado ? " · Calzado " + esc(m.calzado) : "") +
+          (m.notas ? " · " + esc(m.notas) : "") + "</small></div>" +
+          '<div style="display:flex;align-items:center;gap:8px">' +
+          '<span class="pill">✓ Alumn@ ya tallado</span>' +
+          '<button type="button" class="delete" data-delsize="' + m.id + '">Eliminar</button>' +
+          "</div>" +
+          "</div>";
+      }).join("");
+    }
+
+    function renderPedidos() {
+      var cont = $("orderList");
+      if (!pedidos.length) {
+        cont.innerHTML = '<p class="empty-note">Todavía no hay pedidos registrados.</p>';
+        return;
+      }
+      cont.innerHTML = pedidos.map(function (p) {
+        var opciones = ESTADOS.map(function (s) {
+          return "<option" + (s === p.estado ? " selected" : "") + ">" + s + "</option>";
+        }).join("");
+        return '<div class="saved-item">' +
+          "<div><b>" + esc(nombreDe(p.estudianteId)) + "</b><small>" + esc(p.tipo) + "</small></div>" +
+          '<select class="status-select" data-status="' + p.id + '">' + opciones + "</select>" +
+          '<button type="button" class="delete" data-delorder="' + p.id + '">Eliminar</button>' +
+          "</div>";
+      }).join("");
+    }
+
+    function actualizarContadores() {
+      var pendientes = pedidos.filter(function (p) { return p.estado !== "Entregado"; }).length;
+      $("studentCount").textContent = estudiantes.length;
+      $("sizeCount").textContent = medidas.length;
+      $("pendingCount").textContent = pendientes;
+      $("reportStudents").textContent = estudiantes.length;
+      $("reportSizes").textContent = medidas.length;
+      $("reportOrders").textContent = pedidos.length;
+    }
+
+    function renderTodo() {
+      renderEstudiantes();
+      renderSelects();
+      renderMedidas();
+      renderPedidos();
+      actualizarContadores();
+    }
+
+    // ---------- Estudiantes ----------
+    $("studentForm").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var nombre = $("studentName").value.trim();
+      var codigo = $("studentCode").value.trim();
+      var grado = $("studentGrade").value.trim();
+
+      if (!nombre || !codigo || !grado) {
+        aviso("Completa todos los campos.");
+        return;
+      }
+      var repetido = estudiantes.some(function (e) {
+        return e.codigo.toLowerCase() === codigo.toLowerCase();
+      });
+      if (repetido) {
+        aviso("Este código de estudiante ya existe.");
+        return;
+      }
+      var camisa = $("studentShirt").value;
+      var pantalon = $("studentPants").value;
+      var tipo = $("studentUniform").value;
+      var calzado = $("studentShoe").value.trim();
+
+      var nuevo = { id: ++contador, nombre: nombre, codigo: codigo, grado: grado };
+      estudiantes.push(nuevo);
+      medidas.push({ id: ++contador, estudianteId: nuevo.id, camisa: camisa, pantalon: pantalon, calzado: calzado, notas: "" });
+      pedidos.push({ id: ++contador, estudianteId: nuevo.id, tipo: tipo, estado: ESTADOS[0] });
+
+      this.reset();
+      renderTodo();
+      mostrarConfirmacion(nombre, grado, camisa, pantalon, tipo, calzado);
+    });
+
+    // ---------- Pantalla de confirmación (5 segundos) ----------
+    var modal = $("confirmModal");
+    var barra = $("modalBar");
+    var modalTimer;
+
+    function cerrarConfirmacion() {
+      clearTimeout(modalTimer);
+      modal.classList.remove("show");
+    }
+
+    function mostrarConfirmacion(nombre, grado, camisa, pantalon, tipo, calzado) {
+      $("mdName").textContent = nombre;
+      $("mdGrade").textContent = grado;
+      $("mdShirt").textContent = camisa;
+      $("mdPants").textContent = pantalon;
+      $("mdShoe").textContent = calzado || "—";
+      $("mdOrder").textContent = tipo + " · Registrado";
+
+      // Reinicia la barra de progreso de 5 segundos
+      barra.style.animation = "none";
+      void barra.offsetWidth;
+      barra.style.animation = "modalBar 5s linear forwards";
+
+      modal.classList.add("show");
+      clearTimeout(modalTimer);
+      modalTimer = setTimeout(cerrarConfirmacion, 5000);
+    }
+
+    $("modalClose").addEventListener("click", cerrarConfirmacion);
+    modal.addEventListener("click", function (ev) {
+      if (ev.target === modal) cerrarConfirmacion();
+    });
+
+    // ---------- Medidas ----------
+    $("sizeForm").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var id = parseInt($("sizeStudent").value, 10);
+      if (!id) {
+        aviso("Selecciona un estudiante.");
+        return;
+      }
+      var datos = {
+        estudianteId: id,
+        camisa: $("shirtSize").value,
+        pantalon: $("pantsSize").value,
+        calzado: $("shoeSize").value.trim(),
+        notas: $("sizeNotes").value.trim()
+      };
+      // Si ya existe ficha para ese estudiante, se actualiza
+      var existente = medidas.filter(function (m) { return m.estudianteId === id; })[0];
+      if (existente) {
+        existente.camisa = datos.camisa;
+        existente.pantalon = datos.pantalon;
+        existente.calzado = datos.calzado;
+        existente.notas = datos.notas;
+      } else {
+        datos.id = ++contador;
+        medidas.push(datos);
+      }
+      $("sizeNotes").value = "";
+      $("shoeSize").value = "";
+      renderMedidas();
+      actualizarContadores();
+      aviso("Medidas guardadas correctamente.");
+    });
+
+    // ---------- Pedidos ----------
+    $("orderForm").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var id = parseInt($("orderStudent").value, 10);
+      if (!id) {
+        aviso("Selecciona un estudiante.");
+        return;
+      }
+      pedidos.push({ id: ++contador, estudianteId: id, tipo: $("orderType").value, estado: ESTADOS[0] });
+      renderPedidos();
+      actualizarContadores();
+      aviso("Pedido creado correctamente.");
+    });
+
+    // ---------- Clicks de eliminar (delegación de eventos) ----------
+    document.addEventListener("click", function (ev) {
+      var t = ev.target;
+      if (!t || !t.getAttribute) return;
+
+      var d = t.getAttribute("data-del");
+      if (d) {
+        var id = parseInt(d, 10);
+        estudiantes = estudiantes.filter(function (e) { return e.id !== id; });
+        medidas = medidas.filter(function (m) { return m.estudianteId !== id; });
+        pedidos = pedidos.filter(function (p) { return p.estudianteId !== id; });
+        renderTodo();
+        aviso("Estudiante eliminado.");
+        return;
+      }
+      var ds = t.getAttribute("data-delsize");
+      if (ds) {
+        medidas = medidas.filter(function (m) { return m.id !== parseInt(ds, 10); });
+        renderMedidas(); actualizarContadores();
+        return;
+      }
+      var dord = t.getAttribute("data-delorder");
+      if (dord) {
+        pedidos = pedidos.filter(function (p) { return p.id !== parseInt(dord, 10); });
+        renderPedidos(); actualizarContadores();
+      }
+    });
+
+    // Cambio de estado de pedidos
+    document.addEventListener("change", function (ev) {
+      var t = ev.target;
+      if (t && t.getAttribute && t.getAttribute("data-status")) {
+        var id = parseInt(t.getAttribute("data-status"), 10);
+        pedidos.forEach(function (p) { if (p.id === id) p.estado = t.value; });
+        actualizarContadores();
+      }
+    });
+
+    // ---------- Exportar CSV ----------
+    $("exportBtn").addEventListener("click", function () {
+      if (!estudiantes.length) {
+        aviso("No hay datos para exportar.");
+        return;
+      }
+      function celda(v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }
+      var filas = [["Institución", "Código institución", "Nombre", "Código", "Grado", "Camisa", "Pantalón", "Observaciones", "Pedidos"]];
+      estudiantes.forEach(function (e) {
+        var m = medidas.filter(function (x) { return x.estudianteId === e.id; })[0] || {};
+        var ped = pedidos.filter(function (p) { return p.estudianteId === e.id; })
+          .map(function (p) { return p.tipo + " (" + p.estado + ")"; }).join("; ");
+        filas.push([institucion.nombre, institucion.codigo, e.nombre, e.codigo, e.grado, m.camisa || "", m.pantalon || "", m.notas || "", ped]);
+      });
+      var csv = "\uFEFF" + filas.map(function (f) { return f.map(celda).join(","); }).join("\n");
+      var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "meditfor-uniformes.csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      aviso("CSV descargado.");
+    });
+
+    // ---------- Menú móvil, fecha y año ----------
+    var toggle = $("menuToggle");
+    var sidebar = $("sidebar");
+    if (toggle && sidebar) {
+      toggle.addEventListener("click", function () { sidebar.classList.toggle("open"); });
+      sidebar.addEventListener("click", function (ev) {
+        if (ev.target.closest && ev.target.closest("a")) sidebar.classList.remove("open");
+      });
+    }
+
+    var navs = document.querySelectorAll(".nav");
+    navs.forEach(function (n) {
+      n.addEventListener("click", function () {
+        navs.forEach(function (x) { x.classList.remove("active"); });
+        n.classList.add("active");
+      });
+    });
+
+    var hoy = $("today");
+    if (hoy) {
+      hoy.textContent = new Date().toLocaleDateString("es-SV", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric"
+      });
+    }
+    var anio = $("year");
+    if (anio) anio.textContent = new Date().getFullYear();
+
+    // ---------- Institución ----------
+    var institucion = { nombre: "", codigo: "" };
+    var gate = $("gate");
+
+    $("gateForm").addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var nombre = $("instName").value.trim();
+      var codigo = $("instCode").value.trim();
+      var error = $("gateError");
+
+      if (!nombre || !codigo) {
+        error.textContent = "Completa el nombre y el código de la institución.";
+        return;
+      }
+      error.textContent = "";
+      institucion = { nombre: nombre, codigo: codigo };
+      $("profileInst").textContent = nombre + " · " + codigo;
+      gate.classList.add("hide");
+      document.body.classList.remove("gate-open");
+      window.scrollTo(0, 0);
+      aviso("Bienvenido, " + nombre + ".");
+    });
+
+    $("changeInst").addEventListener("click", function () {
+      gate.classList.remove("hide");
+      document.body.classList.add("gate-open");
+      $("instName").focus();
+    });
+
+    renderTodo();
+  }
+
+  // Funciona aunque el script se cargue después de que la página ya terminó de cargar
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", iniciar);
+  } else {
+    iniciar();
+  }
+})();
+</script>
+
+
+</div></main>
+
+
+<footer class="wp-block-template-part">
+<footer class="wp-block-group cm-footer is-layout-flow wp-block-group-is-layout-flow">
+<p class="has-text-align-center wp-block-paragraph">© 2026 CodeMarket — Directorio Web de Proveedores de Software. Módulo 1.8 Proyecto Tecnológico.</p>
+</footer>
+
+</footer>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/wordpress/*"},{"not":{"href_matches":["/wordpress/wp-*.php","/wordpress/wp-admin/*","/wordpress/wp-content/uploads/*","/wordpress/wp-content/*","/wordpress/wp-content/plugins/*","/wordpress/wp-content/themes/devconecta/*","/wordpress/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="devconecta-main-js" src="./MEDIFORMENT=Control de medidas de uniforme_files/main.js.descargar"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"http://localhost:8080/wordpress/wp-includes/js/wp-emoji-release.min.js?ver=7.1.3"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=http://localhost:8080/wordpress/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+
+</body></html>
